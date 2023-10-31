@@ -1,19 +1,30 @@
 body {
     
-    
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(57, 110, 75);
 }
+.heading {
+    color:white;
+    font-size: 50px;
+    display: flex;
+    
+}
+.game {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 .image{
-    /* margin-top: 200px; */
-    margin-left: 100px;
+    color: wheat;
 
 }
 .container {
-    /* margin-top: 200px; */
-    background-color: rgba(255, 255, 255, 0);
     margin-top: -205px;
-    margin-left: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    
     width: 220px;
 }
 .row-elements {
@@ -28,17 +39,22 @@ body {
     margin-right: 25px;
     margin-left: 0px;
     margin-top: 17px;
+    border: none;
+    border-radius: 10px;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
 }
 .comment-box {
-    color:white;
-    margin-left: 100px;
-    background-color: rgba(0, 0, 0, 0.2);
-    height: 50px;
-    width: 163px;
     display: flex;
     justify-content: center;
+    margin-right: 2px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.092);
+    height: 50px;
+    border-radius: 30px;
     margin-top: 10px;
-    
 }
 .reset-btn {
     height: 50px;
@@ -47,11 +63,11 @@ body {
     font-style: italic;
     font-weight: bold;
     margin-top: 10px;
+    border-radius: 20px;
+    border: none;
     
 }
-.btns{
-    display: flex;
-}
+
 .setbg {
     background-color: red;
 }
