@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    
+    background-color: rgb(57, 110, 75);
+}
+.image{
+    margin-top: 200px;
+}
+.container {
+    margin-top: 200px;
+}
+.row-elements {
+    display: flex;
+    margin-left: -200px;
+}
+
+.row {
+    background-color: rgba(0, 128, 0, 0);
+    height: 50px;
+    width: 50px;
+    margin-right: 25px;
+    margin-left: 0px;
+    margin-top: 17px;
+}
+.comment-box {
+    color:white;
+    margin-top: 280px;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    
+}
+.reset-btn {
+    height: 50px;
+    margin-top: 280px;
+    width: 90px;
+    font-style: italic;
+    font-weight: bold;
+}
+.setbg {
+    background-color: red;
+}
