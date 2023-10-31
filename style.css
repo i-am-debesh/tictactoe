@@ -1,22 +1,28 @@
 body {
-    display: flex;
-    justify-content: center;
+    
+    
     
     background-color: rgb(57, 110, 75);
 }
 .image{
-    margin-top: 200px;
+    /* margin-top: 200px; */
+    margin-left: 100px;
+
 }
 .container {
-    margin-top: 200px;
+    /* margin-top: 200px; */
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: -205px;
+    margin-left: 100px;
+    width: 220px;
 }
 .row-elements {
     display: flex;
-    margin-left: -200px;
+    margin-left: 2px;
 }
 
 .row {
-    background-color: rgba(0, 128, 0, 0);
+    background-color: rgba(113, 128, 0, 0);
     height: 50px;
     width: 50px;
     margin-right: 25px;
@@ -25,20 +31,26 @@ body {
 }
 .comment-box {
     color:white;
-    margin-top: 280px;
+    margin-left: 100px;
     background-color: rgba(0, 0, 0, 0.2);
     height: 50px;
-    width: 200px;
+    width: 163px;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     
 }
 .reset-btn {
     height: 50px;
-    margin-top: 280px;
+    /* margin-top: 280px; */
     width: 90px;
     font-style: italic;
     font-weight: bold;
+    margin-top: 10px;
+    
+}
+.btns{
+    display: flex;
 }
 .setbg {
     background-color: red;
