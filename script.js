@@ -14,6 +14,14 @@ const btn23 = document.querySelector('.row23');
 const btn31 = document.querySelector('.row31');
 const btn32 = document.querySelector('.row32');
 const btn33 = document.querySelector('.row33');
+
+const clickTone = new Audio('tones/click.mp3');
+const gameOverTone = new Audio('tones/gameOver.mp3');
+const winTone = new Audio('tones/win.wav');
+function playSound(audio) {
+    audio.play();
+}
+
 function isSame(v1,v2,v3) {
     if(v1 != '') {
         if(v1 === v2 && v2 === v3) {
@@ -79,24 +87,26 @@ btnElements.forEach(element => {
     element.addEventListener('click',() =>{
         
         let winner = 'cross';
-        
+        playSound(clickTone);
         if(element.innerHTML === '' && disableClick != 1) {
             if(nextMove%2 == 0) {
-                element.innerHTML = `<img src="cross.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
+                element.innerHTML = `<img src="images/cross.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
                 winner = 'cross';
             }else if(nextMove%2 == 1) {
-                element.innerHTML = `<img src="tick.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
+                element.innerHTML = `<img src="images/tick.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
                 winner = 'tick';
 
             }
             nextMove++;
             steps--;
             if(checkTriplets()) {
+                playSound(winTone);
                 commentElement.innerHTML = `<p>${winner} Is Winner</p>`;
                 nextMove = 0;
                 steps = 9;
             }else if(steps === 0 && !checkTriplets()) {
-                commentElement.innerHTML = "<p>It's Draw</p>";
+                playSound(gameOverTone);
+                commentElement.innerHTML = `<p style="color:white;">It's Draw</p>`;
                 nextMove = 0;
                 steps = 9;
                 reset();
