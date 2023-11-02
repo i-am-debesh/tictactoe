@@ -78,44 +78,47 @@ function checkTriplets() {
 btnElements.forEach(element => {
     element.addEventListener('click',() =>{
         
+        let winner = 'cross';
         
-        if(nextMove%2 === 0 && element.innerHTML === '' && disableClick !=1) {
-            element.innerHTML = `<img src="cross.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
+        if(element.innerHTML === '' && disableClick != 1) {
+            if(nextMove%2 == 0) {
+                element.innerHTML = `<img src="cross.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
+                winner = 'cross';
+            }else if(nextMove%2 == 1) {
+                element.innerHTML = `<img src="tick.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
+                winner = 'tick';
+
+            }
             nextMove++;
             steps--;
             if(checkTriplets()) {
-                // console.log('cross is winner');
-                commentElement.innerHTML = "<p>Cross Is Winner</p>";
+                commentElement.innerHTML = `<p>${winner} Is Winner</p>`;
                 nextMove = 0;
-            }
-            else if(steps === 0) {
-                // console.log("It's a Draw");
-            }
-            
-            
-        }else if(nextMove%2 === 1 && element.innerHTML==='' && disableClick != 1) {
-            element.innerHTML = `<img src="tick.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
-            nextMove++;
-            steps--;
-            if(checkTriplets()) {
-                // console.log('tick is winner');
-                commentElement.innerHTML = "<p>Tick Is Winner</p>";
+                steps = 9;
+            }else if(steps === 0 && !checkTriplets()) {
+                commentElement.innerHTML = "<p>It's Draw</p>";
                 nextMove = 0;
-            }
-            else if(steps === 0) {
-                // console.log("It's a Draw");
+                steps = 9;
+                reset();
+
             } 
-                
         }
-        
         
     });
 });
-resetbtnElement.addEventListener('click',()=>{
-    nextMove = 0;
-    btnElements.forEach(element=>{
-        element.innerHTML = "";
+
+
+function reset() {
+        resetbtnElement.addEventListener('click',()=>{
+        nextMove = 0;
+        btnElements.forEach(element=>{
+            element.innerHTML = "";
+        });
+        disableClick = 0;
+        commentElement.innerHTML = '';
     });
-    disableClick = 0;
-    commentElement.innerHTML = '';
+}
+
+resetbtnElement.addEventListener('click' ,()=>{
+    reset();
 });
