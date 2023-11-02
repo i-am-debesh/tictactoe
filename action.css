@@ -1,0 +1,34 @@
+.sound-btn {
+    height: 20px;
+    width: 45px;
+    background-color: rgb(24, 23, 23);
+    border-radius: 15px;
+    display: flex;
+    flex-direction:row-reverse;
+    margin-left: 5px;
+    
+    
+}
+.sound-btn-off {
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+}
+.circle {
+    height: 18px;
+    width: 23px;
+    background-color: rgba(99, 26, 138, 0.934);
+    border-radius: 13px;
+    border-style: groove;
+    border-color: rgba(0, 0, 0, 0.334);
+    border-width: 0.5px;
+    
+}
+.act-btns {
+    display: flex;
+    justify-content: center;
+}
+.sound-text {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 5px;
+}

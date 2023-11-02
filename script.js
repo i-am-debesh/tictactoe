@@ -14,12 +14,14 @@ const btn23 = document.querySelector('.row23');
 const btn31 = document.querySelector('.row31');
 const btn32 = document.querySelector('.row32');
 const btn33 = document.querySelector('.row33');
-
+let soundAllowed = 1;
 const clickTone = new Audio('tones/click.mp3');
 const gameOverTone = new Audio('tones/gameOver.mp3');
 const winTone = new Audio('tones/win.wav');
 function playSound(audio) {
-    audio.play();
+    if(soundAllowed === 1) {
+        audio.play();
+    }
 }
 
 function isSame(v1,v2,v3) {
@@ -117,7 +119,7 @@ btnElements.forEach(element => {
     });
 });
 
-
+//resetBtn code::
 function reset() {
         resetbtnElement.addEventListener('click',()=>{
         nextMove = 0;
@@ -131,4 +133,22 @@ function reset() {
 
 resetbtnElement.addEventListener('click' ,()=>{
     reset();
+});
+//////////////////////////////////
+
+
+//////Sound Btn code::
+const circleBtn = document.querySelector('.circle');
+const soundElement = document.querySelector('.sound-btn');
+let isClicked = 0;
+circleBtn.addEventListener('click', ()=>{
+    if(isClicked === 0) {
+        soundElement.classList.add('sound-btn-off');
+        isClicked = 1;
+        soundAllowed = 0;
+    }else {
+        soundElement.classList.remove('sound-btn-off');
+        isClicked = 0;
+        soundAllowed = 1;
+    }
 });
