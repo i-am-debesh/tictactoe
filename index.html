@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TicTacToe</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="action.css">
+    <link rel="stylesheet" href="scoreBoard.css">
 </head>
 <body>
 
@@ -22,48 +23,69 @@
         <div class="container">
             
             <div class="row-elements">
-                <div class="row11 row"></div>
-                <div class="row12 row"></div>
-                <div class="row13 row"></div>
+                <div class="row11 row" id="row"></div>
+                <div class="row12 row" id="row"></div>
+                <div class="row13 row" id="row"></div>
             </div>
             <div class="row-elements">
-                <div class="row21 row"></div>
-                <div class="row22 row"></div>
-                <div class="row23 row"></div>
+                <div class="row21 row" id="row"></div>
+                <div class="row22 row" id="row"></div>
+                <div class="row23 row" id="row"></div>
             </div>
             <div class="row-elements">
-                <div class="row31 row"></div>
-                <div class="row32 row"></div>
-                <div class="row33 row"></div>
+                <div class="row31 row" id="row"></div>
+                <div class="row32 row" id="row"></div>
+                <div class="row33 row" id="row"></div>
             </div>
             
         
             <div>
                 <div class="btns">
-                    <div class="comment-box"></div>
-                    <button class="reset-btn" >New Game</button>
+                    <div class="comment-box" id="comment-box"></div>
+                    <button class="reset-btn" id="reset-btn">New Game</button>
                 </div>
 
                 <div class="act-btns">
                     <div class="sound-elements">
                         <p class="sound-text">Sound</p>
                         <div class="sound-btn">
-                            <div class="circle"></div>
+                            <div class="circle">
+                                <p class="status">on</p>
+                            </div>
                         </div>
+                    </div>
+                    <div class="clear-btn-section">
+                        <button class="clear-btn">Clear Data</button>
                     </div>
                     
                 </div>
-            </div>
-            
-        
 
+                <div class="score-board">
+                    <div class="cross-score">
+                        <div class="img-cross">
+                            <img src="/images/cross.png" alt="" class="img-c">
+                        </div>
+                        <div class="cross-points">
+                            <p class="points points-c"></p>
+                        </div>
+                    </div>
+
+                    <div class="tick-score">
+                        <div class="img-tick">
+                            <img src="/images/tick.png" alt="" class="img-t">
+                        </div>
+                        <div class="tick-points">
+                            <p class="points points-t"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
     
     
-    
-    
     <script src="script.js"></script>
+    
 </body>
 </html>

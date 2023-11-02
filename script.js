@@ -1,6 +1,13 @@
+
+
 const btnElements = document.querySelectorAll('.row');
 const commentElement = document.querySelector('.comment-box');
 const resetbtnElement = document.querySelector('.reset-btn');
+const crossPointElement = document.querySelector('.points-c');
+const tickPointElement = document.querySelector('.points-t');
+const clearDataElement = document.querySelector('.clear-btn');
+
+renderPoints();
 let nextMove = 0;
 let steps = 9;
 let disableClick = 0;
@@ -94,16 +101,18 @@ btnElements.forEach(element => {
             if(nextMove%2 == 0) {
                 element.innerHTML = `<img src="images/cross.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
                 winner = 'cross';
+                
             }else if(nextMove%2 == 1) {
                 element.innerHTML = `<img src="images/tick.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
                 winner = 'tick';
-
+                
             }
             nextMove++;
             steps--;
             if(checkTriplets()) {
                 playSound(winTone);
                 commentElement.innerHTML = `<p>${winner} Is Winner</p>`;
+                increasePoint(winner);
                 nextMove = 0;
                 steps = 9;
             }else if(steps === 0 && !checkTriplets()) {
@@ -129,6 +138,7 @@ function reset() {
         disableClick = 0;
         commentElement.innerHTML = '';
     });
+    
 }
 
 resetbtnElement.addEventListener('click' ,()=>{
@@ -141,14 +151,66 @@ resetbtnElement.addEventListener('click' ,()=>{
 const circleBtn = document.querySelector('.circle');
 const soundElement = document.querySelector('.sound-btn');
 let isClicked = 0;
-circleBtn.addEventListener('click', ()=>{
+soundElement.addEventListener('click', ()=>{
     if(isClicked === 0) {
+        circleBtn.innerHTML = `<p class="status">off</p>`;
         soundElement.classList.add('sound-btn-off');
         isClicked = 1;
         soundAllowed = 0;
     }else {
+        circleBtn.innerHTML = `<p class="status">on</p>`
         soundElement.classList.remove('sound-btn-off');
         isClicked = 0;
         soundAllowed = 1;
     }
 });
+
+///pointsCalculation::::::::::
+
+let tickPoint = tickPointElement.innerHTML;
+let crossPoint = crossPointElement.innerHTML;
+
+//localStorage.clear();
+function renderPoints() {
+    if(localStorage.getItem('cross') === null || localStorage.getItem('tick') === null) {
+        if(localStorage.getItem('cross') === null && localStorage.getItem('tick') == null) {
+            crossPointElement.innerHTML = 0;
+            tickPointElement.innerHTML = 0;
+
+        }else if(localStorage.getItem('cross') === null && localStorage.getItem('tick') != null) {
+            crossPointElement.innerHTML = 0;
+            tickPointElement.innerHTML = localStorage.getItem('tick');
+        }else {
+            crossPointElement.innerHTML = localStorage.getItem('cross');
+            tickPointElement.innerHTML = 0;
+        }
+    }else {
+        crossPointElement.innerHTML = localStorage.getItem('cross');
+        tickPointElement.innerHTML = localStorage.getItem('tick');
+    }
+    
+}
+    
+
+clearDataElement.addEventListener('click', ()=>{
+    localStorage.clear();
+    renderPoints();
+});
+
+
+function increasePoint(winner) {
+    if(winner === 'cross') {
+        localStorage.setItem('cross',Number(crossPoint)+1);
+        crossPointElement.innerHTML = localStorage.getItem('cross');
+        
+        
+        
+    }else if(winner === 'tick') {
+        localStorage.setItem('tick',Number(tickPoint)+1);
+        tickPointElement.innerHTML = localStorage.getItem('tick');
+        
+        
+    } 
+}
+
+

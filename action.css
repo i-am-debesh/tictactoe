@@ -1,27 +1,66 @@
+.game{
+    background-color: rgba(0, 128, 0, 0);
+}
 .sound-btn {
     display: flex;
     background-color: rgba(255, 255, 255, 0.349);
-    height: 25px;
-    width: 50px;
+    height: 40px;
+    width: 100px;
     border-radius: 25px;
     border: none;
     flex-direction: row-reverse;
+    border: 0.5px;
+    border-color: rgba(240, 248, 255, 0.152);
+    border-style: solid;
+    
 }
+
 .sound-btn-off {
     flex-direction: row;
-    background-color: rgba(255, 255, 255, 0.349);
+    background-color: rgba(255, 255, 255, 0);
+    border: 0.5px;
+    border-color: rgba(240, 248, 255, 0.152);
+    border-style: solid;
+    
 }
 .circle {
-    height: 25px;
-    width: 50%;
-    background-color: rgba(128, 0, 128, 0.845);
-    border-radius: 25px;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(110, 30, 110);
+    border-radius: 45px;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .act-btns {
     display: flex;
     justify-content: center;
+    
 }
 .sound-text {
+    color: white;
+    margin-left: 20px;
+}
+
+.clear-btn-section {
+    /* background-color: rgba(0, 0, 0, 0.358); */
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-left: 10px;
+    
+    
+}
+.clear-btn {
+    height: 40px;
+    width: 90px;
+    border-radius: 30px;
+    border: none;
+    font-family: cursive;
+    margin-top: 50px;
+
 
 }
+

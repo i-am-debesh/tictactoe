@@ -1,0 +1,61 @@
+.score-board {
+    display: flex;
+    height: 100px;
+    width: 220px;
+    /* background-color: white; */
+    margin-top: 20px;
+    border-radius: 10px;
+    
+}
+
+.cross-score {
+    height: 100px;
+    width: 50%;
+    /* background-color: rgba(0, 0, 255, 0.397); */
+}
+.img-cross {
+    height: 50%;
+    /* background-color: rgba(128, 0, 128, 0.645); */
+    display: flex;
+    justify-content: center;
+}
+.cross-points {
+    height: 50%;
+    /* background-color: rgba(0, 255, 255, 0.551); */
+    display: flex;
+    justify-content: center;
+}
+.img-c {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    
+}
+/* -------------------------- */
+.tick-score {
+    height: 100px;
+    width: 50%;
+    /* background-color: rgba(255, 0, 123, 0.397); */
+}
+.img-tick {
+    height: 50%;
+    /* background-color: rgba(128, 0, 128, 0.453); */
+    display: flex;
+    justify-content: center;
+}
+.tick-points {
+    height: 50%;
+    /* background-color: rgba(0, 255, 255, 0.11); */
+    display: flex;
+    justify-content: center;
+    
+}
+.img-t {
+    height: 50px;
+    width: 50px;
+}
+.points {
+    color: black;
+    font-family: cursive;
+    font-size: 20px;
+}
