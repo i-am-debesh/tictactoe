@@ -4,7 +4,7 @@ const resetbtnElement = document.querySelector('.reset-btn');
 let nextMove = 0;
 let steps = 9;
 let disableClick = 0;
-const winner = "";
+
 const btn11 = document.querySelector('.row11');
 const btn12 = document.querySelector('.row12');
 const btn13 = document.querySelector('.row13');
