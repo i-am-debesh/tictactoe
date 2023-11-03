@@ -1,16 +1,14 @@
-
-
 const btnElements = document.querySelectorAll('.row');
 const commentElement = document.querySelector('.comment-box');
 const resetbtnElement = document.querySelector('.reset-btn');
 const crossPointElement = document.querySelector('.points-c');
 const tickPointElement = document.querySelector('.points-t');
 const clearDataElement = document.querySelector('.clear-btn');
-
-renderPoints();
 let nextMove = 0;
 let steps = 9;
 let disableClick = 0;
+let crossPoint = 0;
+let tickPoint = 0;
 
 const btn11 = document.querySelector('.row11');
 const btn12 = document.querySelector('.row12');
@@ -50,7 +48,7 @@ function setColor(v1,v2,v3) {
         v1.classList.remove('setbg');
         v2.classList.remove('setbg');
         v3.classList.remove('setbg');
-    }, 1000);
+    }, 2000);
     
     
 }
@@ -95,7 +93,7 @@ function checkTriplets() {
 btnElements.forEach(element => {
     element.addEventListener('click',() =>{
         
-        let winner = 'cross';
+        let winner = '';
         playSound(clickTone);
         if(element.innerHTML === '' && disableClick != 1) {
             if(nextMove%2 == 0) {
@@ -167,50 +165,26 @@ soundElement.addEventListener('click', ()=>{
 
 ///pointsCalculation::::::::::
 
-let tickPoint = tickPointElement.innerHTML;
-let crossPoint = crossPointElement.innerHTML;
-
-//localStorage.clear();
-function renderPoints() {
-    if(localStorage.getItem('cross') === null || localStorage.getItem('tick') === null) {
-        if(localStorage.getItem('cross') === null && localStorage.getItem('tick') == null) {
-            crossPointElement.innerHTML = 0;
-            tickPointElement.innerHTML = 0;
-
-        }else if(localStorage.getItem('cross') === null && localStorage.getItem('tick') != null) {
-            crossPointElement.innerHTML = 0;
-            tickPointElement.innerHTML = localStorage.getItem('tick');
-        }else {
-            crossPointElement.innerHTML = localStorage.getItem('cross');
-            tickPointElement.innerHTML = 0;
-        }
-    }else {
-        crossPointElement.innerHTML = localStorage.getItem('cross');
-        tickPointElement.innerHTML = localStorage.getItem('tick');
-    }
-    
-}
-    
-
-clearDataElement.addEventListener('click', ()=>{
-    localStorage.clear();
-    renderPoints();
-});
-
+crossPoint = Number(crossPointElement.innerHTML);
+tickPoint = Number(tickPointElement.innerHTML);
 
 function increasePoint(winner) {
     if(winner === 'cross') {
-        localStorage.setItem('cross',Number(crossPoint)+1);
-        crossPointElement.innerHTML = localStorage.getItem('cross');
-        
-        
-        
+        crossPoint += 1;
+        crossPointElement.innerHTML = crossPoint;
     }else if(winner === 'tick') {
-        localStorage.setItem('tick',Number(tickPoint)+1);
-        tickPointElement.innerHTML = localStorage.getItem('tick');
-        
-        
-    } 
+        tickPoint += 1;
+        tickPointElement.innerHTML = tickPoint;
+    }
 }
+function clearData() {
+    crossPointElement.innerHTML = 0;
+    tickPointElement.innerHTML = 0;
+    
+}
+
+clearDataElement.addEventListener('click', ()=>{
+    clearData();
+});
 
 

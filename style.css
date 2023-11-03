@@ -12,7 +12,7 @@ body {
     display: flex;
     
 }
-.game {
+#game {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,18 +21,18 @@ body {
     color: wheat;
 
 }
-.container {
+#container {
     margin-top: -205px;
     background-color: rgba(255, 255, 255, 0);
     
     width: 220px;
 }
-.row-elements {
+#row-elements {
     display: flex;
     margin-left: 2px;
 }
 
-#row {
+.row-style {
     background-color: rgba(113, 128, 0, 0);
     height: 50px;
     width: 50px;
@@ -42,7 +42,7 @@ body {
     border: none;
     border-radius: 10px;
 }
-.btns{
+#btns{
     display: flex;
     flex-direction: row;
 }
@@ -70,4 +70,5 @@ body {
 
 .setbg {
     background-color: red;
+    z-index: 200;
 }

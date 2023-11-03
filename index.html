@@ -15,32 +15,32 @@
         <p>TicTacToe</p>
     </div>
 
-    <div class="game">
+    <div class="game" id="game">
         <div class="image">
             <img src="images/table.png" alt="" width="200px">
         </div>
         
-        <div class="container">
+        <div class="container" id="container">
             
-            <div class="row-elements">
-                <div class="row11 row" id="row"></div>
-                <div class="row12 row" id="row"></div>
-                <div class="row13 row" id="row"></div>
+            <div class="row-elements" id="row-elements" >
+                <div class="row11 row row-style" id="row-style"></div>
+                <div class="row12 row row-style" id="row-style"></div>
+                <div class="row13 row row-style" id="row-style"></div>
             </div>
-            <div class="row-elements">
-                <div class="row21 row" id="row"></div>
-                <div class="row22 row" id="row"></div>
-                <div class="row23 row" id="row"></div>
+            <div class="row-elements" id="row-elements">
+                <div class="row21 row row-style" id="row-style"></div>
+                <div class="row22 row row-style" id="row-style"></div>
+                <div class="row23 row row-style" id="row-style"></div>
             </div>
-            <div class="row-elements">
-                <div class="row31 row" id="row"></div>
-                <div class="row32 row" id="row"></div>
-                <div class="row33 row" id="row"></div>
+            <div class="row-elements" id="row-elements">
+                <div class="row31 row row-style" id="row-style"></div>
+                <div class="row32 row row-style" id="row-style"></div>
+                <div class="row33 row row-style" id="row-style"></div>
             </div>
             
         
             <div>
-                <div class="btns">
+                <div class="btns" id="btns">
                     <div class="comment-box" id="comment-box"></div>
                     <button class="reset-btn" id="reset-btn">New Game</button>
                 </div>
@@ -66,7 +66,7 @@
                             <img src="images/cross.png" alt="" class="img-c">
                         </div>
                         <div class="cross-points">
-                            <p class="points points-c"></p>
+                            <p class="points points-c">0</p>
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@
                             <img src="images/tick.png" alt="" class="img-t">
                         </div>
                         <div class="tick-points">
-                            <p class="points points-t"></p>
+                            <p class="points points-t">0</p>
                         </div>
                     </div>
                 </div>
