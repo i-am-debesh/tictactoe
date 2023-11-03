@@ -48,7 +48,7 @@ function setColor(v1,v2,v3) {
         v1.classList.remove('setbg');
         v2.classList.remove('setbg');
         v3.classList.remove('setbg');
-    }, 2000);
+    }, 1000);
     
     
 }
