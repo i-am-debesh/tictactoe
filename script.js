@@ -134,7 +134,6 @@ btnElements.forEach(element => {
                 commentElement.innerHTML = `<p style="color:white;">It's Draw</p>`;
                 nextMove = 0;
                 steps = 9;
-                reset();
 
             } 
         }
