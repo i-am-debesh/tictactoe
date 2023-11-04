@@ -4,14 +4,15 @@
 .sound-btn {
     display: flex;
     background-color: rgba(255, 255, 255, 0.349);
-    height: 40px;
-    width: 100px;
+    height: 25px;
+    width: 60px;
     border-radius: 25px;
     border: none;
     flex-direction: row-reverse;
     border: 0.5px;
     border-color: rgba(240, 248, 255, 0.152);
     border-style: solid;
+    padding: 3px;
     
 }
 
@@ -24,15 +25,17 @@
     
 }
 .circle {
-    height: 40px;
-    width: 40px;
+    height: 25px;
+    width: 25px;
     background-color: rgb(110, 30, 110);
     border-radius: 45px;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
 
 .act-btns {
     display: flex;
@@ -41,7 +44,11 @@
 }
 .sound-text {
     color: white;
-    margin-left: 20px;
+    margin-left: 10px;
+}
+.status {
+    font-size: 10px;
+    font-weight: bolder;
 }
 
 .clear-btn-section {
@@ -60,6 +67,7 @@
     border: none;
     font-family: cursive;
     margin-top: 50px;
+    cursor: pointer;
 
 
 }

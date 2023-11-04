@@ -9,8 +9,59 @@ body {
 .heading {
     color:white;
     font-size: 50px;
-    display: flex;
+    /* display: flex; */
+    /* background-color: rgba(0, 0, 0, 0.373); */
     
+}
+.heading-text {
+    /* background-color: green; */
+    color: wheat;
+}
+.name {
+    padding: 0px;
+    margin: 0px;
+    
+}
+.turn-txt {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(165, 42, 42, 0);
+    color: rgb(240, 204, 204);
+    font-size: 20px;
+    width: 79px;
+    margin-top: 15px;
+    margin-right: -30px;
+    font-weight: bolder;
+}
+
+.turns{
+    display: flex;
+    height: 35px;
+    width: 60%;
+    margin-left: 15%;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.105);
+    border-radius: 20px;
+
+}
+.turn-c,
+.turn-t {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+/* .turn-c {
+    background-color: cadetblue;
+}
+.turn-t{
+    background-color: tomato;
+} */
+.set-turn-bg {
+    background-color: rgba(0, 255, 247, 0.34);
+    /* background-color: purple; */
+    border-radius: 20px;
 }
 #game {
     display: flex;
@@ -47,24 +98,30 @@ body {
     flex-direction: row;
 }
 #comment-box {
+
     display: flex;
     justify-content: center;
-    margin-right: 2px;
-    width: 150px;
+    align-items: center;
+    margin-right: 5px;
+    width: 155px;
     background-color: rgba(255, 255, 255, 0.092);
-    height: 50px;
+    height: 40px;
     border-radius: 30px;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-family: cursive;
+    font-weight: bold;
+    
 }
 #reset-btn {
-    height: 50px;
-    /* margin-top: 280px; */
+    height: 40px;
     width: 90px;
     font-style: italic;
     font-weight: bold;
     margin-top: 10px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
+    font-family: cursive;
     
 }
 

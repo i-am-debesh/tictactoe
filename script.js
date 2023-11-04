@@ -1,9 +1,11 @@
 const btnElements = document.querySelectorAll('.row');
 const commentElement = document.querySelector('.comment-box');
-const resetbtnElement = document.querySelector('.reset-btn');
+const resetbtnElement = document.querySelector('.js-reset-btn');
 const crossPointElement = document.querySelector('.points-c');
 const tickPointElement = document.querySelector('.points-t');
 const clearDataElement = document.querySelector('.clear-btn');
+const turnCElement = document.querySelector('.js-turn-c');
+const turnTElement = document.querySelector('.js-turn-t');
 let nextMove = 0;
 let steps = 9;
 let disableClick = 0;
@@ -90,26 +92,40 @@ function checkTriplets() {
     return 0;
 }
 
+function setTurnBg() {
+    if(nextMove === 0 || nextMove%2 === 0) {
+        turnTElement.classList.remove('set-turn-bg');
+        turnCElement.classList.add('set-turn-bg');
+
+    }
+    else if(nextMove!=0 && nextMove % 2 != 0) {
+        turnCElement.classList.remove('set-turn-bg');
+        turnTElement.classList.add('set-turn-bg');
+    }
+}
+
+
 btnElements.forEach(element => {
     element.addEventListener('click',() =>{
         
         let winner = '';
         playSound(clickTone);
         if(element.innerHTML === '' && disableClick != 1) {
-            if(nextMove%2 == 0) {
+            if(nextMove%2 === 0) {
                 element.innerHTML = `<img src="images/cross.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
                 winner = 'cross';
                 
-            }else if(nextMove%2 == 1) {
+            }else if(nextMove%2 === 1) {
                 element.innerHTML = `<img src="images/tick.png" alt="" width="30px" style="margin-top: 9px; margin-left: 9px;"></img>`;
                 winner = 'tick';
                 
             }
             nextMove++;
             steps--;
+            setTurnBg();
             if(checkTriplets()) {
                 playSound(winTone);
-                commentElement.innerHTML = `<p>${winner} Is Winner</p>`;
+                commentElement.innerHTML = `<p>${winner} is Winner</p>`;
                 increasePoint(winner);
                 nextMove = 0;
                 steps = 9;
@@ -126,17 +142,16 @@ btnElements.forEach(element => {
     });
 });
 
+setTurnBg();
 //resetBtn code::
 function reset() {
-        resetbtnElement.addEventListener('click',()=>{
-        nextMove = 0;
-        btnElements.forEach(element=>{
-            element.innerHTML = "";
-        });
-        disableClick = 0;
-        commentElement.innerHTML = '';
+    nextMove = 0;
+    btnElements.forEach(element=>{
+        element.innerHTML = "";
     });
-    
+    disableClick = 0;
+    commentElement.innerHTML = '';
+    setTurnBg();
 }
 
 resetbtnElement.addEventListener('click' ,()=>{
