@@ -145,6 +145,7 @@ setTurnBg();
 //resetBtn code::
 function reset() {
     nextMove = 0;
+    steps = 9;
     btnElements.forEach(element=>{
         element.innerHTML = "";
     });
