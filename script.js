@@ -195,6 +195,8 @@ function increasePoint(winner) {
 function clearData() {
     crossPointElement.innerHTML = 0;
     tickPointElement.innerHTML = 0;
+    crossPoint = 0;
+    tickPoint = 0;
     
 }
 
