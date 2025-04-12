@@ -8,11 +8,16 @@ body {
 }
 .nav-bar {
     display: flex;
+    /* background-color: black; */
 
 }
 .nav-item{
     margin-right: 1rem;
     margin-bottom: 2rem;
+    background-color: rgb(105, 99, 195);
+    padding: 1rem;
+    border: none;
+    box-shadow: 2px 2px 5px black;
 }
 a{
     color: rgb(241, 239, 236);
