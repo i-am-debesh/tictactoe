@@ -6,6 +6,17 @@ body {
     align-items: center;
     background-color: rgb(57, 110, 75);
 }
+.nav-bar {
+    display: flex;
+
+}
+.nav-item{
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+}
+a{
+    color: rgb(241, 239, 236);
+}
 .heading {
     color:white;
     font-size: 50px;
